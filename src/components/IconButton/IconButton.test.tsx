@@ -3,9 +3,10 @@ import React from "react";
 import IconButton from "./index";
 
 test("render icon button component", () => {
+  const handleClick = jest.fn();
   render(
     <div>
-      <IconButton onClick={() => {}} />
+      <IconButton onClick={handleClick} />
     </div>
   );
   const linkElement = screen.getByTestId("styled-button");
