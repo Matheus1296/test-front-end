@@ -56,7 +56,7 @@ function Dialog({
 
   return isOpen ? (
     <>
-      <StyledDialogContainer isOpen={isOpen}>
+      <StyledDialogContainer isOpen={isOpen} data-testid={"styled-dialog"}>
         <StyledDialog>
           <div style={{ padding: "0px 32px 32px 32px" }}>
             <StyledDiv>
@@ -67,7 +67,12 @@ function Dialog({
           </div>
         </StyledDialog>
         <StyledBackgroundDialog
-          onClick={onClose}
+          data-testid={"styled-background-dialog"}
+          onClick={() => {
+            if (closeOnOverlayClick) {
+              onClose();
+            }
+          }}
           isOpen={isOpen}
           closeOnOverlayClick={closeOnOverlayClick}
         />
