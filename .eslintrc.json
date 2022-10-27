@@ -5,23 +5,74 @@
     },
     "extends": [
         "plugin:react/recommended",
-        "standard-with-typescript"
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended"
     ],
     "overrides": [
     ],
     "parserOptions": {
         "ecmaVersion": "latest",
-        "sourceType": "module"
+        "sourceType": "module",
+        "project": ["./tsconfig.json"]
     },
     "plugins": [
-        "react"
+        "react",
+        "react-hooks",
+        "@typescript-eslint",
+        "prettier"
     ],
     "rules": {
-        "import/no-unresolved": "error"
-    },
-    "settings": {
-        "import/resolver": {
-            "typescript": {}
-        }
+        "consistent-return": "off",
+        "prettier/prettier": "error",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "react/prop-types": 0,
+        "import/no-cycle": "off",
+        "import/prefer-default-export": "off",
+        "class-methods-use-this": "off",
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": [
+            "error"
+        ],
+        "no-shadow": "off",
+        "camelcase": "off",
+        "react/jsx-one-expression-per-line": "off",
+        "react-native/no-color-literals": "off",
+        "react-native/sort-styles": "off",
+        "react-native/no-inline-styles": "off",
+        "react-native/no-raw-text": "off",
+        "global-require": "off",
+        "object-curly-newline": "off",
+        "func-names": "off",
+        "max-len": [
+            "error",
+            {
+                "ignoreComments": true
+            },
+            {
+                "code": 160
+            }
+        ],
+        "jsx-a11y/accessible-emoji": "off",
+        "prefer-template": "off",
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": [
+            "error"
+        ],
+        "react/jsx-filename-extension": [
+            "error",
+            {
+                "extensions": [
+                    ".js",
+                    ".ts",
+                    ".tsx"
+                ]
+            }
+        ],
+        "react/require-default-props": "off",
+        "react/jsx-props-no-spreading": "off",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn"
     }
 }
